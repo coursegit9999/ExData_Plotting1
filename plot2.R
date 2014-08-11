@@ -8,9 +8,7 @@ tabrows$Date <- as.Date(tabrows$Date , "%d/%m/%Y")
 
 tabsel <-  tabrows[ tabrows$Date >= as.Date('2007-02-01') & tabrows$Date <= as.Date('2007-02-02') & tabrows$Global_active_power != "?",]
 
-tabsel$Global_active_power <- as.numeric(tabsel$Global_active_power)
-
-tabsel$Global_active_power <- tabsel$Global_active_power/500
+tabsel$Global_active_power <- as.numeric(as.character(tabsel$Global_active_power))
 
 tabsel$DateTime <- strptime(paste(tabsel$Date, tabsel$Time), "%Y-%m-%d %H:%M:%S") 
 
